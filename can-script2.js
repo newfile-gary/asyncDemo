@@ -33,3 +33,32 @@ function initial(products){
     }
 
 }
+
+let form=document.querySelector("form");
+let select=document.querySelector("select");
+let button=document.querySelector("button");
+
+button.addEventListener("click", showSelectImg);
+
+function showSelectImg(){
+    event.defaultPrevented;
+    main.innerHTML="";
+    let key=select.value;
+    for(let i=0;i<products.length;i++){
+        if(key===products[i].type){
+            let section=document.createElement("section");
+        let h2=document.createElement("h2");
+        let p=document.createElement("p");
+        let img=document.createElement("img");
+        section.setAttribute("class",products[i].type);
+        h2.textContent=products[i].name;
+        p.textContent="$"+products[i].price;
+        img.src="images/"+products[i].image;
+        img.setAttribute("alt",products[i].name);
+        section.appendChild(h2);
+        section.appendChild(p);
+        section.appendChild(img);
+        main.appendChild(section);
+        }
+    }
+}
