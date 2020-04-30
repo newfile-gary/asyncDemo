@@ -8,67 +8,38 @@
   {
     "name" : "hot dogs",
     "price" : 1.99,
-    "image" : "1280.png",
+    "image" : "12801.png",
     "type" : "meat"
   },
   {
     "name" : "spam",
     "price" : 2.85,
-    "image" : "1280.png",
+    "image" : "12802.png",
     "type" : "meat"
   },
   {
     "name" : "refried beans",
     "price" : 0.99,
-    "image" : "1280.png",
+    "image" : "12803.png",
     "type" : "vegetables"
   },
   {
     "name" : "kidney beans",
     "price" : 0.58,
-    "image" : "1280.png",
+    "image" : "12804.png",
     "type" : "vegetables"
   },
   {
     "name" : "garden peas",
     "price" : 0.52,
-    "image" : "1280.png",
+    "image" : "12805.png",
     "type" : "vegetables"
   },
   {
     "name" : "mushy peas",
     "price" : 0.58,
-    "image" : "1280.png",
+    "image" : "12806.png",
     "type" : "vegetables"
-  },
-  {
-    "name" : "corned beef",
-    "price" : 2.39,
-    "image" : "1280.png",
-    "type" : "meat"
-  },
-  {
-    "name" : "tomato soup",
-    "price" : 1.40,
-    "image" : "1280.png",
-    "type" : "soup"
-  },
-  {
-    "name" : "chopped tomatoes",
-    "price" : 0.45,
-    "image" : "1280.png",
-    "type" : "vegetables"
-  },
-  {
-    "name" : "chicken noodle soup",
-    "price" : 1.89,
-    "image" : "1280.png",
-    "type" : "soup"
-  },
-  {
-    "name" : "carrot and coriander soup",
-    "price" : 1.49,
-    "image" : "1280.png",
-    "type" : "soup"
   }
+ 
 ]
