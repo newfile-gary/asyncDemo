@@ -64,4 +64,6 @@ function showSelectImg(){
     }
 }
 var but=document.querySelector(".button");
-but.appendChild(document.createTextNode("consoloe"));
+but.onclick=function(){
+    console.log("成功");
+}
