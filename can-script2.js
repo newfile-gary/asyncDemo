@@ -64,6 +64,6 @@ function showSelectImg(){
     }
 }
 var but=document.querySelector(".button");
-button.onclick=function(){
+but.onclick=function(){
     console.log("成功");
 }
