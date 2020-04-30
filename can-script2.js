@@ -29,6 +29,7 @@ function initial(products){
         section.appendChild(h2);
         section.appendChild(p);
         section.appendChild(img);
+        main.appendChild(section);
     }
 
 }
