@@ -22,17 +22,17 @@ function initial(products){
     }
 
 }
-function fetchBlob(products){
-    let promise=fetch("images/"+products.image);
-    promise.then(function(response){
+function fetchBlob(product){
+    let promise1=fetch("images/"+product.image);
+    promise1.then(function(response){
         return response.blob();
     }).then(
         function(blob){
-            showImg(blob,products);
+            showImg(blob,product);
         }
     )
 }
-function showImg(url,products){
+function showImg(url,product){
     let section=document.createElement("section");
         let h2=document.createElement("h2");
         let p=document.createElement("p");
