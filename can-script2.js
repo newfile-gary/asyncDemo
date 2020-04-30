@@ -41,7 +41,7 @@ let button=document.querySelector("button");
 button.addEventListener("click", showSelectImg);
 
 function showSelectImg(){
-    event.defaultPrevented;
+    event.defaultPrevented();
     console.log("kkk");
     let key=select.value;
     for(let i=0;i<products.length;i++){
