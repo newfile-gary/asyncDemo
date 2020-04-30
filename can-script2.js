@@ -42,7 +42,7 @@ button.addEventListener("click", showSelectImg);
 
 function showSelectImg(){
     event.defaultPrevented;
-    main.innerHTML="";
+    console.log("kkk");
     let key=select.value;
     for(let i=0;i<products.length;i++){
         if(key===products[i].type){
