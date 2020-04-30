@@ -63,7 +63,7 @@ function showSelectImg(){
         }
     }
 }
-var but=querySelector(".button");
+var but=document.querySelector(".button");
 button.onclick=function(){
     console.log("成功");
 }
