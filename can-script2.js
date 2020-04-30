@@ -1,5 +1,5 @@
 var main=document.querySelector("main");
-var promise=fetch("products.json");
+var promise=fetch("products2.json");
 var products={};
 promise.then(
     function(response){
