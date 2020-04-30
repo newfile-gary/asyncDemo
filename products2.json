@@ -34,12 +34,7 @@
     "price" : 0.52,
     "image" : "12805.png",
     "type" : "vegetables"
-  },
-  {
-    "name" : "mushy peas",
-    "price" : 0.58,
-    "image" : "12806.png",
-    "type" : "vegetables"
   }
+
  
 ]
