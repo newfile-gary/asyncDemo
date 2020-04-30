@@ -37,12 +37,12 @@ function showImg(url,product){
         let h2=document.createElement("h2");
         let p=document.createElement("p");
         let img=document.createElement("img");
-        section.setAttribute("class",products.type);
-        h2.textContent=products.name;
-        p.textContent="$"+products.price;
+        section.setAttribute("class",product.type);
+        h2.textContent=product.name;
+        p.textContent="$"+product.price;
         let imgUrl=URL.createObjectURL(url);
         img.src=imgUrl;
-        img.setAttribute("alt",products.name);
+        img.setAttribute("alt",product.name);
         section.appendChild(h2);
         section.appendChild(p);
         section.appendChild(img);
