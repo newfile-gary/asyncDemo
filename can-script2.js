@@ -40,6 +40,7 @@ function showImg(url,product){
         section.setAttribute("class",products.type);
         h2.textContent=products.name;
         p.textContent="$"+products.price;
+        let imgUrl=URL.createObjectURL(url);
         img.src=url;
         img.setAttribute("alt",products.name);
         section.appendChild(h2);
