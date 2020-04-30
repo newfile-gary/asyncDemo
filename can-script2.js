@@ -1,5 +1,5 @@
 var main=document.querySelector("main");
-var promise=fetch("products2.json");
+var promise=fetch("products.json");
 var products={};
 promise.then(
     function(response){
@@ -62,4 +62,8 @@ function showSelectImg(){
         main.appendChild(section);
         }
     }
+}
+var but=querySelector(".button");
+button.onclick=function(){
+    console.log("成功");
 }
