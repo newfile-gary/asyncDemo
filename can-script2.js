@@ -25,12 +25,13 @@ function initial(products){
     var twoSelectProducts=[];
     twoSelectProducts=products;
     selectThree();
+    //oneSelectProducts=[];
     twoSelectProducts=[];
     button.addEventListener("click", selectOne);
 
     //1先判断是什么类型的商品
     function selectOne(event){
-        //event.preventDefault();
+        event.preventDefault();
         if(select.value.toLowerCase()==="all"){
             oneSelectProducts=products;
         }else{
@@ -74,7 +75,7 @@ function initial(products){
 
     //获取商品图片地址
     function fetchBlob(product){
-        let promise = fetch(product.image);
+        let promise = fetch("images/"+product.image);
         promise.then(response=>response.blob()).then(
             blob=>{
                 let url=URL.createObjectURL(blob);
