@@ -15,26 +15,29 @@ promise.then(
     }
 );
 
+var selectProducts=[];
 function initial(products){
-    for(let i=0;i<products.length;i++){
+    
+    showImg(products);
+}
+function showImg(selectProducts){
+    for(let i=0;i<selectProducts.length;i++){
 
         let section=document.createElement("section");
         let h2=document.createElement("h2");
         let p=document.createElement("p");
         let img=document.createElement("img");
-        section.setAttribute("class",products[i].type);
-        h2.textContent=products[i].name;
-        p.textContent="$"+products[i].price;
-        img.src="images/"+products[i].image;
-        img.setAttribute("alt",products[i].name);
+        section.setAttribute("class",selectProducts[i].type);
+        h2.textContent=selectProducts[i].name;
+        p.textContent="$"+selectProducts[i].price;
+        img.src="images/"+selectProducts[i].image;
+        img.setAttribute("alt",selectProducts[i].name);
         section.appendChild(h2);
         section.appendChild(p);
         section.appendChild(img);
         main.appendChild(section);
     }
-
 }
-
 let form=document.querySelector("form");
 let select=document.querySelector("select");
 let button=document.querySelector("button");
@@ -64,6 +67,6 @@ function showSelectImg(){
     }
 }
 var but=document.querySelector(".button");
-but.onclick=function(){
+button.onclick=function(){
     console.log("成功");
 }
