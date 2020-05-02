@@ -23,7 +23,8 @@ function initial(products){
     //var products={};
     var oneSelectProducts=[];
     var twoSelectProducts=[];
-    selectOne();
+    twoSelectProducts=products;
+    selectThree();
     button.addEventListener("click", selectOne);
 
     //1先判断是什么类型的商品
@@ -44,23 +45,30 @@ function initial(products){
     //2再判断同类型中符合搜索关键字的商品
     function selectTwo(){
         let formatSearchTerm=searchTerm.value.toLowerCase().trim();
-        main.innerHTML="";
+       
         if(formatSearchTerm===""){
             twoSelectProducts=oneSelectProducts;
         }else{
-            if(!(oneSelectProducts.name.indexOf(formatSearchTerm)===-1)){
-                for(let i=0;i<oneSelectProducts.length;i++){
+            for(let i=0;i<oneSelectProducts.length;i++){
+                if(!(oneSelectProducts[i].name.indexOf(formatSearchTerm)===-1)){
                     twoSelectProducts.push(oneSelectProducts[i]);
                 }
-            }else{
-                let text=document.createTextNode("没有结果！");
-                main.appendChild(text);
             }
         }
-        for(let i=0;i<twoSelectProducts.length;i++){
-            fetchBlob(twoSelectProducts[i]);
-        }
         
+        
+    }
+
+    function selectThree(){
+        main.innerHTML="";
+        if(twoSelectProducts.length===0){
+            let text=document.createTextNode("没有结果！");
+            main.appendChild(text);
+        }else{
+            for(let i=0;i<twoSelectProducts.length;i++){
+                fetchBlob(twoSelectProducts[i]);
+            }
+        }
     }
 
     //获取商品图片地址
