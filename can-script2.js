@@ -32,6 +32,7 @@ function initial(products){
     //1先判断是什么类型的商品
     function selectOne(event){
         event.preventDefault();
+        oneSelectProducts=[];
         twoSelectProducts=[];
         if(select.value.toLowerCase()==="all"){
             oneSelectProducts=products;
