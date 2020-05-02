@@ -23,11 +23,11 @@ function initial(products){
     //var products={};
     var oneSelectProducts=[];
     var twoSelectProducts=[];
-    selectOne(products);
+    selectOne();
     button.addEventListener("click", selectOne);
 
     //1先判断是什么类型的商品
-    function selectOne(products){
+    function selectOne(){
         event.preventDefault();
         if(select.value==="all"){
             oneSelectProducts=products;
