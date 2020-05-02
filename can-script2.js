@@ -18,7 +18,7 @@ function initial(products){
         showImg(products[i]);
     }
     var main=document.querySelector("main");
-    var products={};
+    //var products={};
     var selectProducts=[];
 
     let form=document.querySelector("form");
