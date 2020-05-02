@@ -26,12 +26,13 @@ function initial(products){
     twoSelectProducts=products;
     selectThree();
     //oneSelectProducts=[];
-    twoSelectProducts=[];
+    
     button.addEventListener("click", selectOne);
 
     //1先判断是什么类型的商品
     function selectOne(event){
         event.preventDefault();
+        twoSelectProducts=[];
         if(select.value.toLowerCase()==="all"){
             oneSelectProducts=products;
         }else{
