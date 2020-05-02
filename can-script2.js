@@ -29,7 +29,7 @@ function initial(products){
     //1先判断是什么类型的商品
     function selectOne(){
         event.preventDefault();
-        if(select.value==="all"){
+        if(select.value.toLowerCase()==="all"){
             oneSelectProducts=products;
         }else{
             for(let i=0;i<products.length;i++){
@@ -48,7 +48,7 @@ function initial(products){
         if(formatSearchTerm===""){
             twoSelectProducts=oneSelectProducts;
         }else{
-            if((oneSelectProducts.indexOf(formatSearchTerm)===-1)){
+            if(!(oneSelectProducts.name.indexOf(formatSearchTerm)===-1)){
                 for(let i=0;i<oneSelectProducts.length;i++){
                     twoSelectProducts.push(oneSelectProducts[i]);
                 }
