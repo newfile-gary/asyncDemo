@@ -17,13 +17,14 @@ function initial(products){
     let form=document.querySelector("form");
     let select=document.querySelector("select");
     let button=document.querySelector("button");
+    var main=document.querySelector("main");
+    //var products={};
+    var selectProducts=[];
+    button.addEventListener("click", showSelectImg);
     
     for(let i=0;i<products.length;i++){
         showImg(products[i]);
     }
-    var main=document.querySelector("main");
-    //var products={};
-    var selectProducts=[];
 
 
     function showImg(product){
@@ -44,7 +45,7 @@ function initial(products){
     }
 
     
-    button.addEventListener("click", showSelectImg);
+   
     
     function showSelectImg(){
         event.preventDefault();
