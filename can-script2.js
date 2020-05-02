@@ -1,5 +1,5 @@
 var main=document.querySelector("main");
-var promise=fetch("products.json");
+var promise=fetch("products2.json");
 var products={};
 promise.then(
     function(response){
@@ -16,8 +16,7 @@ promise.then(
 );
 
 var selectProducts=[];
-function initial(products){
-    
+function initial(products){ 
     showImg(products);
 }
 function showImg(selectProducts){
@@ -48,6 +47,8 @@ function showSelectImg(){
     event.preventDefault();
     main.innerHTML="";
     let key=select.value;
+    key=key.toLowerCase();
+    console.log(key);
     for(let i=0;i<products.length;i++){
         if(key===products[i].type){
             let section=document.createElement("section");
@@ -65,8 +66,4 @@ function showSelectImg(){
         main.appendChild(section);
         }
     }
-}
-var but=document.querySelector(".button");
-button.onclick=function(){
-    console.log("成功");
 }
