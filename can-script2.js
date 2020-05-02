@@ -24,7 +24,7 @@ function initial(products){
     var oneSelectProducts=[];
     var twoSelectProducts=[];
     var lastSelectValue="all";
-    var lastSearchValue;
+    var lastSearchValue="";
     twoSelectProducts=products;
     selectThree();
     //oneSelectProducts=[];
