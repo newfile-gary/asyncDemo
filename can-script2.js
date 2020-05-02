@@ -92,7 +92,7 @@ function initial(products){
         section.setAttribute("class",product.type);
         h2.textContent=product.name;
         p.textContent="$"+product.price;
-        img.src="images/"+url;
+        img.src=url;
         img.setAttribute("alt",product.name);
         section.appendChild(h2);
         section.appendChild(p);
