@@ -24,7 +24,7 @@ function initial(products){
     var oneSelectProducts=[];
     var twoSelectProducts=[];
     selectOne(products);
-    button.addEventListener("click", showSelectImg);
+    button.addEventListener("click", selectOne);
 
     //1先判断是什么类型的商品
     function selectOne(products){
@@ -43,6 +43,7 @@ function initial(products){
     //2再判断同类型中符合搜索关键字的商品
     function selectTwo(){
         let formatSearchTerm=searchTerm.value.toLowerCase().trim();
+        main.innerHTML="";
         if(formatSearchTerm===""){
             twoSelectProducts=oneSelectProducts;
         }else{
