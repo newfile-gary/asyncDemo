@@ -49,7 +49,7 @@ function initial(products){
                 }
             }
         }
-        lastSelectValue=select.value;
+        lastSelectValue=select.value.toLowerCase().trim();
         lastSearchValue=searchTerm.value.toLowerCase().trim();
         selectTwo();
     }
