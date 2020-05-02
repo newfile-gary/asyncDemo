@@ -1,69 +1,62 @@
-var main=document.querySelector("main");
 var promise=fetch("products.json");
-var products={};
 promise.then(
     function(response){
         return response.json();
-}).then(
-    function(json){
-        products=json;
-        initial(products);
+    }).then(
+        function(json){
+            products=json;
+            initial(products);
+        }
+        ).catch(
+            function(e){
+                console.log("没有获取到json文件："+e.message);
+            }
+            );
+            
+function initial(products){
+    for(let i=0;i<products.length;i++){
+        showImg(products[i]);
     }
-).catch(
-    function(e){
-        console.log("没有获取到json文件："+e.message);
-    }
-);
+    var main=document.querySelector("main");
+    var products={};
+    var selectProducts=[];
 
-var selectProducts=[];
-function initial(products){ 
-    showImg(products);
-}
-function showImg(selectProducts){
-    for(let i=0;i<selectProducts.length;i++){
+    let form=document.querySelector("form");
+    let select=document.querySelector("select");
+    let button=document.querySelector("button");
 
+    function showImg(product){
         let section=document.createElement("section");
         let h2=document.createElement("h2");
         let p=document.createElement("p");
         let img=document.createElement("img");
-        section.setAttribute("class",selectProducts[i].type);
-        h2.textContent=selectProducts[i].name;
-        p.textContent="$"+selectProducts[i].price;
-        img.src="images/"+selectProducts[i].image;
-        img.setAttribute("alt",selectProducts[i].name);
+        section.setAttribute("class",product.type);
+        h2.textContent=product.name;
+        p.textContent="$"+product.price;
+        img.src="images/"+product.image;
+        img.setAttribute("alt",product.name);
         section.appendChild(h2);
         section.appendChild(p);
         section.appendChild(img);
         main.appendChild(section);
+        
     }
-}
-let form=document.querySelector("form");
-let select=document.querySelector("select");
-let button=document.querySelector("button");
 
-button.addEventListener("click", showSelectImg);
-
-function showSelectImg(){
-    event.preventDefault();
-    main.innerHTML="";
-    let key=select.value;
-    key=key.toLowerCase();
-    console.log(key);
-    for(let i=0;i<products.length;i++){
-        if(key===products[i].type){
-            let section=document.createElement("section");
-        let h2=document.createElement("h2");
-        let p=document.createElement("p");
-        let img=document.createElement("img");
-        section.setAttribute("class",products[i].type);
-        h2.textContent=products[i].name;
-        p.textContent="$"+products[i].price;
-        img.src="images/"+products[i].image;
-        img.setAttribute("alt",products[i].name);
-        section.appendChild(h2);
-        section.appendChild(p);
-        section.appendChild(img);
-        main.appendChild(section);
+    
+    button.addEventListener("click", showSelectImg);
+    
+    function showSelectImg(){
+        event.preventDefault();
+        main.innerHTML="";
+        let key=select.value;
+        key=key.toLowerCase();
+        console.log(key);
+        for(let i=0;i<products.length;i++){
+            if(key===products[i].type){
+                showImg(products[i]);
+            }else{
+                showImg(products[i]);
+            }
         }
     }
 }
