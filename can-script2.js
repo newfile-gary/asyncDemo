@@ -21,7 +21,7 @@ function initial(products){
     //var products={};
     var selectProducts=[];
     button.addEventListener("click", showSelectImg);
-    
+
     for(let i=0;i<products.length;i++){
         showImg(products[i]);
     }
@@ -53,11 +53,14 @@ function initial(products){
         let key=select.value;
         key=key.toLowerCase();
         console.log(key);
-        for(let i=0;i<products.length;i++){
-            if(key===products[i].type){
-                showImg(products[i]);
-            }else{
-                showImg(products[i]);
+        if(key==="all"){
+            for(let i=0;i<products.length;i++)
+            {   showImg(products[i]);}
+        }else{
+            for(let i=0;i<products.length;i++){
+                if(key===products[i].type){
+                    showImg(products[i]);
+                }
             }
         }
     }
