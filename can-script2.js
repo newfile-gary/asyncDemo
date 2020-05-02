@@ -25,6 +25,7 @@ function initial(products){
     var twoSelectProducts=[];
     twoSelectProducts=products;
     selectThree();
+    twoSelectProducts=[];
     button.addEventListener("click", selectOne);
 
     //1先判断是什么类型的商品
