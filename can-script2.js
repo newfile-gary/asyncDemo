@@ -11,9 +11,13 @@ promise.then(
             function(e){
                 console.log("没有获取到json文件："+e.message);
             }
-            );
+        );
             
 function initial(products){
+    let form=document.querySelector("form");
+    let select=document.querySelector("select");
+    let button=document.querySelector("button");
+    
     for(let i=0;i<products.length;i++){
         showImg(products[i]);
     }
@@ -21,9 +25,6 @@ function initial(products){
     //var products={};
     var selectProducts=[];
 
-    let form=document.querySelector("form");
-    let select=document.querySelector("select");
-    let button=document.querySelector("button");
 
     function showImg(product){
         let section=document.createElement("section");
