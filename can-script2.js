@@ -23,6 +23,8 @@ function initial(products){
     //var products={};
     var oneSelectProducts=[];
     var twoSelectProducts=[];
+    var lastSelectValue="all";
+    var lastSearchValue;
     twoSelectProducts=products;
     selectThree();
     //oneSelectProducts=[];
@@ -34,6 +36,10 @@ function initial(products){
         event.preventDefault();
         oneSelectProducts=[];
         twoSelectProducts=[];
+        if((lastSelectValue===select.value.toLowerCase().trim())
+            && lastSearchValue===searchTerm.value.toLowerCase().trim()){
+                return ;
+            }
         if(select.value.toLowerCase()==="all"){
             oneSelectProducts=products;
         }else{
@@ -43,13 +49,14 @@ function initial(products){
                 }
             }
         }
+        lastSelectValue=select.value;
+        lastSearchValue=searchTerm.value.toLowerCase().trim();
         selectTwo();
     }
 
     //2再判断同类型中符合搜索关键字的商品
     function selectTwo(){
         let formatSearchTerm=searchTerm.value.toLowerCase().trim();
-       
         if(formatSearchTerm===""){
             twoSelectProducts=oneSelectProducts;
         }else{
