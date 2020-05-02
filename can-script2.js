@@ -28,7 +28,7 @@ function initial(products){
     button.addEventListener("click", selectOne);
 
     //1先判断是什么类型的商品
-    function selectOne(){
+    function selectOne(event){
         event.preventDefault();
         if(select.value.toLowerCase()==="all"){
             oneSelectProducts=products;
