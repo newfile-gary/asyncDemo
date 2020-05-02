@@ -28,6 +28,7 @@ function initial(products){
 
     //1先判断是什么类型的商品
     function selectOne(products){
+        event.preventDefault();
         if(select.value==="all"){
             oneSelectProducts=products;
         }else{
