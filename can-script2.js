@@ -1,18 +1,81 @@
 //0先获取到包含商品的json文件
-var promise=fetch("products.json");
-promise.then(
-    function(response){
-        return response.json();
-    }).then(
-        function(json){
-            products=json;
-            initial(products);
-        }
-        ).catch(
-            function(e){
-                console.log("没有获取到json文件："+e.message);
+
+           var products=[
+            {
+              "name" : "baked beans",
+              "price" : 0.40,
+              "image" : "beans.jpg",
+              "type" : "vegetables"
+            },
+            {
+              "name" : "hot dogs",
+              "price" : 1.99,
+              "image" : "hotdogs.jpg",
+              "type" : "meat"
+            },
+            {
+              "name" : "spam",
+              "price" : 2.85,
+              "image" : "spam.jpg",
+              "type" : "meat"
+            },
+            {
+              "name" : "refried beans",
+              "price" : 0.99,
+              "image" : "refried.jpg",
+              "type" : "vegetables"
+            },
+            {
+              "name" : "kidney beans",
+              "price" : 0.58,
+              "image" : "kidney.jpg",
+              "type" : "vegetables"
+            },
+            {
+              "name" : "garden peas",
+              "price" : 0.52,
+              "image" : "gardenpeas.jpg",
+              "type" : "vegetables"
+            },
+            {
+              "name" : "mushy peas",
+              "price" : 0.58,
+              "image" : "mushypeas.jpg",
+              "type" : "vegetables"
+            },
+            {
+              "name" : "corned beef",
+              "price" : 2.39,
+              "image" : "cornedbeef.jpg",
+              "type" : "meat"
+            },
+            {
+              "name" : "tomato soup",
+              "price" : 1.40,
+              "image" : "tomatosoup.jpg",
+              "type" : "soup"
+            },
+            {
+              "name" : "chopped tomatoes",
+              "price" : 0.45,
+              "image" : "tomato.jpg",
+              "type" : "vegetables"
+            },
+            {
+              "name" : "chicken noodle soup",
+              "price" : 1.89,
+              "image" : "chickennoodle.jpg",
+              "type" : "soup"
+            },
+            {
+              "name" : "carrot and coriander soup",
+              "price" : 1.49,
+              "image" : "carrotcoriander.jpg",
+              "type" : "soup"
             }
-        );
+          ];
+            initial(products);
+        
             
 function initial(products){
     let form=document.querySelector("form");
@@ -89,13 +152,10 @@ function initial(products){
 
     //获取商品图片地址
     function fetchBlob(product){
-        let promise = fetch("images/"+product.image);
-        promise.then(response=>response.blob()).then(
-            blob=>{
-                let url=URL.createObjectURL(blob);
+    
+                let url="images/"+product.image;
                 showImg(url,product);
-            }
-        ).catch(e=>console.log("图片获取失败："+e.message));
+        
     }
     //将结果进行显示
     function showImg(url,product){
@@ -114,4 +174,25 @@ function initial(products){
         main.appendChild(section);
         
     }
+
+    
+   
+    
+    // function showSelectImg(){
+    //     event.preventDefault();
+    //     main.innerHTML="";
+    //     let key=select.value;
+    //     key=key.toLowerCase();
+    //     console.log(key);
+    //     if(key==="all"){
+    //         for(let i=0;i<products.length;i++)
+    //         {   showImg(products[i]);}
+    //     }else{
+    //         for(let i=0;i<products.length;i++){
+    //             if(key===products[i].type){
+    //                 showImg(products[i]);
+    //             }
+    //         }
+    //     }
+    // }
 }
