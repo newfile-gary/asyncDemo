@@ -90,7 +90,7 @@ function loadAsset(url,type,callback){
   
   //获取商品图片地址
   function fetchBlob(product){
-        let url="images1/"+product.image;
+        let url="images/"+product.image;
         let xhr=new XMLHttpRequest();
         xhr.open("GET",url,true);
         xhr.responseType="blob";
