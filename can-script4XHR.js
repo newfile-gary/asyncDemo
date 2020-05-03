@@ -90,10 +90,18 @@ function loadAsset(url,type,callback){
   
   //获取商品图片地址
   function fetchBlob(product){
-        let url="images/"+product.image;
-        loadAsset(url,"blob",function(){
-            showImg(url,product);
-        });
+        let url="images1/"+product.image;
+        let xhr=XMLHttpRequest();
+        xhr.open("GET",url,true);
+        xhr.responseType="blob";
+        xhr.onreadystatechange=function(){
+            if(xhr.status===200 && xhr.readyState===4){
+                showImg(xhr.response,product);
+            }else{
+                console.log("获取图片失败！")
+            }
+        }
+        xhr.send();
   
   }
   //将结果进行显示
