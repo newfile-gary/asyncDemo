@@ -96,7 +96,8 @@ function loadAsset(url,type,callback){
         xhr.responseType="blob";
         xhr.onreadystatechange=function(){
             if(xhr.status===200 && xhr.readyState===4){
-                showImg(xhr.response,product);
+                let url=URL.createObjectURL(xhr.response);
+                showImg(url,product);
             }else{
                 console.log("获取图片失败！")
             }
