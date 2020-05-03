@@ -4,8 +4,12 @@ function loadAsset(url,type,callback){
     var xhr=new XMLHttpRequest();
     xhr.open("GET",url,true);
     xhr.responseType=type;
-    xhr.onload=function(){
-        callback(xhr.response)
+    xhr.onreadystatechange=function(){
+        if(xhr.status===200&&xhr.readyState===4){
+            callback(xhr.response)
+        }else{
+            console.log("响应失败！")
+        }
     }
     xhr.send();
 };
@@ -86,9 +90,10 @@ function loadAsset(url,type,callback){
   
   //获取商品图片地址
   function fetchBlob(product){
-  
         let url="images/"+product.image;
-        showImg(url,product);
+        loadAsset(url,"blob",function(){
+            showImg(url,product);
+        });
   
   }
   //将结果进行显示
