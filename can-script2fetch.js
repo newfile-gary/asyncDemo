@@ -1,5 +1,5 @@
 //0先获取到包含商品的json文件
-var promise=fetch("products11.json");
+var promise=fetch("products.json");
 promise.then(
     function(response){
         console.log(response.status);
