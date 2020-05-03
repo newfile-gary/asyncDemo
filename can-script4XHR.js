@@ -5,7 +5,7 @@ function loadAsset(url,type,callback){
     xhr.open("GET",url,true);
     xhr.responseType=type;
     xhr.onreadystatechange=function(){
-        if(xhr.status===200&&xhr.readyState===4){
+        if(xhr.status===200 && xhr.readyState===4){
             callback(xhr.response)
         }else{
             console.log("响应失败！")
