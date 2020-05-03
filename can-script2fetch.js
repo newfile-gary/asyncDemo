@@ -2,6 +2,8 @@
 var promise=fetch("products.json");
 promise.then(
     function(response){
+        console.log(response.status);
+        console.log(response.readyState);
         return response.json();
     }).then(
         function(json){
