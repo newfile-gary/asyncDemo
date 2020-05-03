@@ -1,5 +1,5 @@
 //0先获取到包含商品的json文件
-var url="products.js";
+var url="products.json";
 function loadAsset(url,type,callback){
     var xhr=new XMLHttpRequest();
     xhr.open("GET",url,true);
