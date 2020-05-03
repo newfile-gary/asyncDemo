@@ -7,8 +7,6 @@ function loadAsset(url,type,callback){
     xhr.onreadystatechange=function(){
         if(xhr.status===200 && xhr.readyState===4){
             callback(xhr.response)
-        }else{
-            console.log("响应失败！")
         }
     }
     xhr.send();
@@ -98,8 +96,6 @@ function loadAsset(url,type,callback){
             if(xhr.status===200 && xhr.readyState===4){
                 let url=URL.createObjectURL(xhr.response);
                 showImg(url,product);
-            }else{
-                console.log("获取图片失败！")
             }
         }
         xhr.send();
